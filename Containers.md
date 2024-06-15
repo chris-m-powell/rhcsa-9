@@ -40,7 +40,43 @@ In a container file you need to at least define two things.
 
 ## General Commands
 
-``podman info``
+| Subcommand | Description |
+| ---   | --- |
+| system | Manage podman |
+| login | Login to a container registry |
+| logout | Logout of a container registry |
+| search | Search registry for image |
+| image | Manage images |
+| container | Manage containers |
+
+### Image management commands
+| Subcommand | Description |
+| ---   | --- |
+| list | List images in local storage |
+| build | Build an image using instructions from Containerfiles |
+| pull | Pull an image from a registry |
+| push | Push an image to a specified destination |
+| prune | Remove unused images |
+| rm | Removes one or more images from local storage |
+| inspect | Display the configuration of an image | 
+| tree | Prints layer hierarchy of an image in a tree format |
+
+### Container management commands
+| Subcommand | Description |
+| ---   | --- |
+| ps | List containers |
+| prune | Remove all non running containers |
+| create | Create but do not start a container |
+| attach | Attach to a running container |
+| exec | Run a process in a running container |
+| init | Initialize one or more containers |
+| start | Start one or more containers |
+| stop | Stop one or more containers |
+| rm | Remove one or more containers |
+
+
+
+
 
 ### List downloaded images
 ``podman images``
@@ -104,6 +140,8 @@ To see the image layers.
 ## Working with containers
 
 ### Run container
+``podman run [options] <repo>/<image>:<tag>``
+
 ``podman container run -dit --name fedora-v1 fedora``
 -d stands for detached mode. -i stands for interactive and -t stands for terminal. --name names the instance, you don't have to provide a name, then Docker will create a random name for the container. Fedora without any tags behind it, e.g., fedora:36, will make Docker pull the latest Fedora image, the equivalent of writing fedora:latest.
 
